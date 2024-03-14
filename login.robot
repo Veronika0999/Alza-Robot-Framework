@@ -7,7 +7,12 @@ ${email}    emailktestu@gmail.com
 ${pass}     zadejheslo
 
 *** Test Cases ***
+Successful login
+    Login               ${email}    ${pass}
+
+*** Keywords ***
 Login
+    [Arguments]         ${email}     ${pass}
     New Browser         chromium     headless=false
     New Page            ${URL}
     Get Title           ==   Alza.cz – rychlý a pohodlný nákup odkudkoliv | Alza.cz
